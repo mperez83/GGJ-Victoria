@@ -8,6 +8,7 @@ public class IngredientUpdater : MonoBehaviour
     Image m_Image;
     public Sprite m_sprite1;
     public Sprite m_sprite2;
+    private int counter = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -18,21 +19,31 @@ public class IngredientUpdater : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InvokeRepeating("ChangeImage", .5f, .5f);
+        if (counter < 300)
+        {
+            ++counter;
+        }
+        else
+        {
+            ChangeImg();
+            counter = 0;
+        }
     }
 
-    void ChangeImage()
+    void ChangeImg()
     {
-        Debug.Log(m_Image.sprite);
-        if (m_Image.sprite = m_sprite2)
+        int rand = Random.Range(0, 2);
+        //Debug.Log(rand);
+        if (rand == 0)
         {
-            Debug.Log("sprite2");
             m_Image.sprite = m_sprite1;
+            //Debug.Log(m_Image.sprite); //m_Image.sprite returns sprite name
         }
-        else if (m_Image.sprite = m_sprite1)
+        else if (rand == 1)
         {
-            Debug.Log("sprite1");
             m_Image.sprite = m_sprite2;
         }
     }
+
 }
+
