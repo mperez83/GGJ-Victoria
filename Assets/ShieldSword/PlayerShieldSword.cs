@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldSwordScript : MonoBehaviour
+public class PlayerShieldSword : MonoBehaviour
 {
+    /// <summary>
+    /// ADD POINTS
+    /// </summary>
+
     bool attack;
     bool defend;
     Vector2 dir;
@@ -21,6 +25,7 @@ public class ShieldSwordScript : MonoBehaviour
     {
         Point();
         Sword();
+        //Hurt();
     }
 
     void Point()
@@ -61,6 +66,7 @@ public class ShieldSwordScript : MonoBehaviour
                 if (atk_dir.collider.gameObject.CompareTag("Enemy"))
                 {
                     Debug.Log("hit enemy");
+                    Destroy(atk_dir.collider.gameObject);
                 }
             }
             //Debug.Log("Attack " + attack);
@@ -76,5 +82,11 @@ public class ShieldSwordScript : MonoBehaviour
         }
     }
 
-    
+    //void Hurt()
+    //{
+    //    if (defend == false)
+    //    {
+    //        Debug.Log("oof");
+    //    }
+    //}
 }
