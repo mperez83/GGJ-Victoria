@@ -8,23 +8,36 @@ public class PlayerShieldSword : MonoBehaviour
     /// ADD POINTS
     /// </summary>
 
-    bool attack;
-    bool defend;
-    Vector2 dir;
-    RaycastHit2D atk_dir;
+    public Sprite dfd;
+    public Sprite atk;
+    private SpriteRenderer sprite_render;
     
     // Start is called before the first frame update
     void Start()
     {
-        attack = false;
-        defend = true;
+        //attack = false;
+        //defend = true;
+        sprite_render = this.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Point();
-        Sword();
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            sprite_render.sprite = atk;
+            this.GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
+            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
+        }
+
+        if (Input.GetKeyUp(KeyCode.Q))
+        {
+            sprite_render.sprite = dfd;
+            this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.4340281f);
+            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, -0.01063752f);
+        }
+        //Sword();
         //Hurt();
     }
 
@@ -32,53 +45,55 @@ public class PlayerShieldSword : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            //Debug.Log("Up");
-            dir = transform.TransformDirection(Vector2.up) * 2;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //Debug.Log("Down");
-            dir = transform.TransformDirection(Vector2.down) * 2;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 180);
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            //Debug.Log("Right");
-            dir = transform.TransformDirection(Vector2.right) * 2;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, -90);
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            //Debug.Log("Left");
-            dir = transform.TransformDirection(Vector2.left) * 2;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 90);
         }
     }
 
-    void Sword()
-    {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Vector2 start_pos = new Vector2(this.GetComponent<Transform>().position.x, this.GetComponent<Transform>().position.y);
-            attack = true;
-            defend = false;
-            Debug.DrawRay(start_pos, dir, Color.red, 0.5f);
-            atk_dir = Physics2D.Raycast(start_pos, dir, 2f);
-            if (atk_dir.collider != null)
-            {
-                if (atk_dir.collider.gameObject.CompareTag("Enemy"))
-                {
-                    Debug.Log("hit enemy");
-                    Destroy(atk_dir.collider.gameObject);
-                }
-            }
-            //Debug.Log("Attack " + attack);
-            //Debug.Log("Defend " + defend);
-        }
+    //void Sword()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Q))
+    //    {
+    //        sprite_render.sprite = atk;
+    //        this.GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
+    //        this.GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
+    //    }
 
-        if (Input.GetKeyUp(KeyCode.Q))
+    //    if (Input.GetKeyUp(KeyCode.Q))
+    //    {
+    //        sprite_render.sprite = dfd;
+    //        this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.4340281f);
+    //        this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, -0.01063752f);
+    //    }
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (sprite_render.sprite == dfd)
         {
-            attack = false;
-            defend = true;
-            //Debug.Log("Attack " + attack);
-            //Debug.Log("Defend " + defend);
+            Debug.Log(">:)");
+        }
+        if (sprite_render.sprite == atk)
+        {
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                Debug.Log("Ha, YES!");
+            }
+            if (collision.gameObject.CompareTag("Projectile"))
+            {
+                Debug.Log("what the fuck?");
+            }
         }
     }
 

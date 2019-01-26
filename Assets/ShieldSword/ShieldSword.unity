@@ -112,6 +112,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &450653821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 450653823}
+  - component: {fileID: 450653822}
+  m_Layer: 0
+  m_Name: CONTROLLER
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &450653822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450653821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23a6cd7923b8ea46bc0da32af3980a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arrow: {fileID: 5569792860697030873}
+  bandit: {fileID: 11647637916211151}
+--- !u!4 &450653823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450653821}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.8821389, y: -0.04437385, z: 0.07582163}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041338177
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +169,7 @@ GameObject:
   - component: {fileID: 1041338178}
   - component: {fileID: 1041338180}
   - component: {fileID: 1041338181}
-  m_Layer: 2
+  m_Layer: 0
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -168,7 +213,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 86ea6727111540e4eacf96f2f9ee7d24, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -205,6 +250,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36211e47e44d97b4bb2aa5f2360132cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dfd: {fileID: 21300000, guid: 86ea6727111540e4eacf96f2f9ee7d24, type: 3}
+  atk: {fileID: 21300000, guid: c1511f17b5160c74e9acb3b5d59c5503, type: 3}
 --- !u!61 &1041338181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -215,21 +262,21 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0022381544, y: -0.010637522}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.5208333, y: 0.5208333}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2}
+  m_Size: {x: 0.4999112, y: 0.4340281}
   m_EdgeRadius: 0
 --- !u!1 &1838621958
 GameObject:
@@ -331,7 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3eff4048be66edd4a83db0d7a831f820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bandit: {fileID: 11647637916211151}
+  dir: {x: 0, y: 0}
+  speed: 2
 --- !u!61 &11647637916211153
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -358,6 +406,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.16, y: 0.16}
   m_EdgeRadius: 0
+--- !u!50 &11647637916211156
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11647637916211151}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1001 &1344919773068112583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -370,6 +439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Arrow
       objectReference: {fileID: 0}
+    - target: {fileID: 5569792860697030873, guid: 247b48c2d0c194c4c91eda32a8f61531,
+        type: 3}
+      propertyPath: m_TagString
+      value: Projectile
+      objectReference: {fileID: 0}
     - target: {fileID: 2987449390300542021, guid: 247b48c2d0c194c4c91eda32a8f61531,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -378,7 +452,7 @@ PrefabInstance:
     - target: {fileID: 2987449390300542021, guid: 247b48c2d0c194c4c91eda32a8f61531,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35746
+      value: 6.24
       objectReference: {fileID: 0}
     - target: {fileID: 2987449390300542021, guid: 247b48c2d0c194c4c91eda32a8f61531,
         type: 3}
@@ -445,6 +519,12 @@ PrefabInstance:
       propertyPath: arr
       value: 
       objectReference: {fileID: 5569792860697030873}
+    - target: {fileID: 9152259844219744343, guid: 247b48c2d0c194c4c91eda32a8f61531,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8fbb94a0495c53745a2fca3486cf14c8,
+        type: 3}
     m_RemovedComponents:
     - {fileID: 5265625621674799300, guid: 247b48c2d0c194c4c91eda32a8f61531, type: 3}
     - {fileID: 3781261738159824287, guid: 247b48c2d0c194c4c91eda32a8f61531, type: 3}
@@ -474,7 +554,7 @@ PrefabInstance:
     - target: {fileID: 1587579282256642541, guid: b05a29419dcdcf04b99eb271c53f8ba5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.22
+      value: 6.23
       objectReference: {fileID: 0}
     - target: {fileID: 1587579282256642541, guid: b05a29419dcdcf04b99eb271c53f8ba5,
         type: 3}
@@ -576,7 +656,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
+    oldSize: {x: 0.33854166, y: 0.33854166}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -4,49 +4,28 @@ using UnityEngine;
 
 public class BanditShieldSword : MonoBehaviour
 {
-    Vector2 pos;
-    int x;
-    public GameObject bandit;
-    int count; 
+    public Vector2 dir;
+    public float speed;
 
     // Start is called before the first frame update
     void Start()
     {
-        count = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        if (count < 3)
-        {
-            InvokeRepeating("Spawn", 10, 10);
-        }     
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        transform.Translate(speed * dir * Time.deltaTime);
     }
 
-    void Spawn()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        x = Random.Range(0, 4);
-        if (x <= 1)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            pos = Vector2.up * 5;
+            //Debug.Log("aaahhh!!! DIE!!!!!!!!!!!!!!!!!!!");
+            Destroy(this.gameObject);
         }
-        else if (x > 1 && x <= 2)
-        {
-            pos = Vector2.right * 5;
-        }
-        else if (x > 2 && x <= 3)
-        {
-            pos = Vector2.down * 5;
-        }
-        else if (x > 3 && x <= 4)
-        {
-            pos = Vector2.left * 5;
-        }
-
-        GameObject new_bandit = GameObject.Instantiate(bandit);
-        new_bandit.transform.position = new Vector2(pos.x, pos.y);
     }
 }
  
