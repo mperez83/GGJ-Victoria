@@ -15,7 +15,7 @@ public class BanditShieldSword : MonoBehaviour
         count = GameObject.FindGameObjectsWithTag("Enemy").Length;
         if (count < 3)
         {
-            InvokeRepeating("Spawn", 5, 5);
+            InvokeRepeating("Spawn", 10, 10);
         }     
     }
 
