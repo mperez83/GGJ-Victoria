@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/IntroScene/IntroScene.unity
     guid: 2b10ba372b2161d4a833e5352e366952
+  - enabled: 1
+    path: Assets/WitchScene/WitchScene.unity
+    guid: 7153acdbde0e55b44b6a0f2d4a35831d
   m_configObjects: {}
