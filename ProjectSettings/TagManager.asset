@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Ground
+  - Frog
+  - Potion_1
+  - Potion_2
+  - Potion_3
+  - Potion_4
   layers:
   - Default
   - TransparentFX
