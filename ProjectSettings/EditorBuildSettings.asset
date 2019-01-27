@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/WitchScene/WitchScene.unity
     guid: 7153acdbde0e55b44b6a0f2d4a35831d
+  - enabled: 1
+    path: Assets/PotionMinigame/Win.unity
+    guid: 2895373693d5ab546a567126995c4712
+  - enabled: 1
+    path: Assets/PotionMinigame/Lose.unity
+    guid: 88bdd7609d005f344bc214a9ed40a239
   m_configObjects: {}
