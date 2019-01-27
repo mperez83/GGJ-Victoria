@@ -439,8 +439,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.085, y: -550}
-  m_SizeDelta: {x: 400, y: 300}
+  m_AnchoredPosition: {x: 25.085, y: -636}
+  m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320707330
 MonoBehaviour:
@@ -651,8 +651,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25.085, y: -310}
-  m_SizeDelta: {x: 600, y: 100}
+  m_AnchoredPosition: {x: 25.085, y: -399}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1153664319
 MonoBehaviour:
@@ -687,7 +687,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Sound Assets: FreeSound Creators'
+  m_Text: "Special Thanks: Tara Nguyen for the Witch\n\nSound Assets: FreeSound Creators\n\nUnity
+    Assets:Fungus\r\n                          LeanTween\r\n                            TextMeshPro\r\n"
 --- !u!222 &1153664320
 CanvasRenderer:
   m_ObjectHideFlags: 0
