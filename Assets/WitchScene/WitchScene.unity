@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 25
   indentLevel: 0
-  soundClip: {fileID: 8300000, guid: 5fb97ba16d8d08b4e8572db57e2662a6, type: 3}
+  soundClip: {fileID: 8300000, guid: 84d31ab6e7daf0342a391a70cd68cc94, type: 3}
   volume: 1
   waitUntilFinished: 1
 --- !u!114 &209937784
@@ -690,7 +690,7 @@ MonoBehaviour:
   showCount: 1
   extendPrevious: 0
   fadeWhenDone: 1
-  waitForClick: 0
+  waitForClick: 1
   stopVoiceover: 1
   waitForVO: 0
   setSayDialog: {fileID: 0}
