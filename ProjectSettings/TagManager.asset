@@ -12,6 +12,9 @@ TagManager:
   - Potion_3
   - Potion_4
   - Projectile
+  - shroom
+  - cauldron
+  - spider
   layers:
   - Default
   - TransparentFX
@@ -21,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - background
   - 
   - 
   - 
