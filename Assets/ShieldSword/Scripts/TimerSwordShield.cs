@@ -25,5 +25,9 @@ public class TimerSwordShield : MonoBehaviour
         {
             SceneManager.LoadScene("LoseScreenSwordShield");
         }
+        else if (time <= 0f && player_man.GetComponent<PlayerShieldSword>().pts >= 100)
+        {
+            SceneManager.LoadScene("EndScene");
+        }
     }
 }
