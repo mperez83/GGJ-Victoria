@@ -36,7 +36,7 @@ public class IngredientUpdater : MonoBehaviour
 
     void ChangeImg()
     {
-        int rand = Random.Range(0, 4);
+        int rand = Random.Range(0, 5);
         if (rand == 0)
         {
             m_Image.sprite = pictures[0];
@@ -53,10 +53,10 @@ public class IngredientUpdater : MonoBehaviour
         {
             m_Image.sprite = pictures[3];
         }
-        //else if (rand == 4)
-        //{
-         //   m_Image.sprite = pictures[4];
-        //}
+        else if (rand == 4)
+        {
+           m_Image.sprite = pictures[4];
+        }
     }
 
 }
