@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     public Image m_Image;
     public TMP_Text m_score;
+    public AudioClip m_badSound;
+    public AudioClip m_goodSound;
     private float time;
     private int numScore;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0;
         rb = GetComponent<Rigidbody2D>();
         numScore = 0;
     }
@@ -59,11 +62,13 @@ public class PlayerController : MonoBehaviour
         {
             if (m_Image.sprite.ToString() == tag + " (UnityEngine.Sprite)")
             {
+                AudioSource.PlayClipAtPoint(m_goodSound, transform.position, 1);
                 numScore += 10;
                 m_score.text = "Score: " + numScore.ToString();
             }
             else
             {
+                AudioSource.PlayClipAtPoint(m_badSound, transform.position, 1);
                 numScore -= 5;
                 m_score.text = "Score: " + numScore.ToString();
             }

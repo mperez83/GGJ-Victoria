@@ -6,7 +6,7 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     public TMP_Text m_time;
-    private float time = 0.0f;
+    private float time = 60f;
     
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
+        time -= Time.deltaTime;
         m_time.text = "Time: " + time.ToString("F2");
     }
 }

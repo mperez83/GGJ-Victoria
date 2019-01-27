@@ -7,57 +7,54 @@ public class IngredientUpdater : MonoBehaviour
 {
     Image m_Image;
     public Sprite[] pictures;
-    //public Sprite m_sprite1;
-    //public Sprite m_sprite2;
-    private int counter = 0;
+    //private int counter = 0;
+    public Image timerBar;
+    public float maxTime = 5f;
+    private float timeLeft;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Image = GetComponent<Image>();
+        timeLeft = maxTime;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (counter < 300)
+        if(timeLeft > 0)
         {
-            ++counter;
+            timeLeft -= Time.deltaTime;
+            timerBar.fillAmount = timeLeft / maxTime;   
         }
         else
         {
             ChangeImg();
-            counter = 0;
+            timeLeft = maxTime;
         }
     }
 
     void ChangeImg()
     {
         int rand = Random.Range(0, 5);
-        //Debug.Log(rand);
         if (rand == 0)
         {
-            //m_Image.sprite = m_sprite1;
             m_Image.sprite = pictures[0];
         }
         else if (rand == 1)
         {
-            //m_Image.sprite = m_sprite2;
             m_Image.sprite = pictures[1];
         }
         else if (rand == 2)
         {
-            //m_Image.sprite = m_sprite2;
             m_Image.sprite = pictures[2];
         }
         else if (rand == 3)
         {
-            //m_Image.sprite = m_sprite2;
             m_Image.sprite = pictures[3];
         }
         else if (rand == 4)
         {
-            //m_Image.sprite = m_sprite2;
             m_Image.sprite = pictures[4];
         }
     }

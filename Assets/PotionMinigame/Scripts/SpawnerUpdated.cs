@@ -20,14 +20,14 @@ public class SpawnerUpdated : MonoBehaviour
 
     IEnumerator Spawn1()
     {
-        yield return new WaitForSeconds(Random.Range(0.25f, 0.75f));
+        yield return new WaitForSeconds(Random.Range(0.25f, 0.50f));
         Instantiate(ingredients[Random.Range(0,ingredients.Length)], new Vector3(Random.Range(-10.0f, 10.0f), 15, 0), Quaternion.identity);
         StartCoroutine(Spawn2());
     }
 
     IEnumerator Spawn2()
     {
-        yield return new WaitForSeconds(Random.Range(0.25f, .75f));
+        yield return new WaitForSeconds(Random.Range(0.25f, .50f));
         Instantiate(ingredients[Random.Range(0, ingredients.Length)], new Vector3(Random.Range(-10.0f, 10.0f), 15, 0), Quaternion.identity);
         StartCoroutine(Spawn1());
     }
