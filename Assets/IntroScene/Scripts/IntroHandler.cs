@@ -14,7 +14,7 @@ public class IntroHandler : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        LeanTween.value(1, 0, 2).setOnUpdate((float value) =>
+        LeanTween.value(1, 0, 1).setOnUpdate((float value) =>
         {
             fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, value);
         }).setOnComplete(() =>
@@ -29,7 +29,7 @@ public class IntroHandler : MonoBehaviour
         yield return new WaitForSeconds(5.5f);
         sr.sprite = doorOpen;
         yield return new WaitForSeconds(4.5f);
-        LeanTween.value(0, 1, 2).setOnUpdate((float value) =>
+        LeanTween.value(0, 1, 1).setOnUpdate((float value) =>
         {
             fadeOverlay.color = new Color(fadeOverlay.color.r, fadeOverlay.color.g, fadeOverlay.color.b, value);
         }).setOnComplete(() =>

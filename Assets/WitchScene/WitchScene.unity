@@ -612,7 +612,7 @@ MonoBehaviour:
     booleanVal: 1
   duration:
     floatRef: {fileID: 0}
-    floatVal: 2
+    floatVal: 1
   fadeMode: 1
   targetColor:
     colorRef: {fileID: 0}
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 25
   indentLevel: 0
-  soundClip: {fileID: 0}
+  soundClip: {fileID: 8300000, guid: 5fb97ba16d8d08b4e8572db57e2662a6, type: 3}
   volume: 1
   waitUntilFinished: 1
 --- !u!114 &209937784
@@ -796,7 +796,7 @@ MonoBehaviour:
     booleanVal: 1
   duration:
     floatRef: {fileID: 0}
-    floatVal: 2
+    floatVal: 1
   fadeMode: 1
   targetColor:
     colorRef: {fileID: 0}
