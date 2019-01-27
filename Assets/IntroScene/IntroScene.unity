@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeOverlay: {fileID: 1094902428}
-  doorOpen: {fileID: 21300000, guid: 247fab07e86f3d640aa291d208ef757f, type: 3}
+  doorOpen: {fileID: 21300000, guid: 4d8ecf062e96e34448d31fe9a809b27c, type: 3}
   sr: {fileID: 843515071}
 --- !u!4 &1229790532
 Transform:
