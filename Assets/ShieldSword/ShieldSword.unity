@@ -458,7 +458,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 6d94a802260cf564d8b50a5bc9a885c7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.466
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1119,6 +1119,36 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 99eb389bb805735478ae71d2f0bba941,
         type: 3}
+    - target: {fileID: 11647637916211153, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11647637916211153, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11647637916211153, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11647637916211153, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.border.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11647637916211153, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.596
+      objectReference: {fileID: 0}
+    - target: {fileID: 11647637916211153, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.596
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b05a29419dcdcf04b99eb271c53f8ba5, type: 3}
 --- !u!1 &5569792860697030873 stripped
