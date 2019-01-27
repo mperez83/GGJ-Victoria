@@ -64,14 +64,14 @@ public class PlayerController : MonoBehaviour
         {
             if (m_Image.sprite.ToString() == tag + " (UnityEngine.Sprite)")
             {
-                AudioSource.PlayClipAtPoint(m_goodSound, transform.position, 1);
+                AudioSource.PlayClipAtPoint(m_goodSound, transform.position);
                 numScore += 10;
                 m_score.text = "Score: " + numScore.ToString();
             }
             else
             {
                 StartCoroutine(Flicker());
-                AudioSource.PlayClipAtPoint(m_badSound, transform.position, 1);
+                AudioSource.PlayClipAtPoint(m_badSound, transform.position);
                 numScore -= 5;
                 m_score.text = "Score: " + numScore.ToString();
             }
