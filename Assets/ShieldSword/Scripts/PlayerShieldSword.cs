@@ -14,6 +14,7 @@ public class PlayerShieldSword : MonoBehaviour
     AudioSource sources;
     public GameObject bandit;
 
+
     bool swingOnCooldown;
     
     // Start is called before the first frame update
@@ -36,14 +37,19 @@ public class PlayerShieldSword : MonoBehaviour
             swingOnCooldown = true;
             sprite_render.sprite = atk;
             swipe.Play();
-            GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
-            GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
+            GetComponent<BoxCollider2D>().size = new Vector2(0.4192291f, 0.6109091f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.06608872f, -0.008615002f);
 
-            LeanTween.delayedCall(0.5f, () =>
+            LeanTween.delayedCall(0.25f, () =>
             {
                 sprite_render.sprite = dfd;
-                LeanTween.delayedCall(0.5f, () => { swingOnCooldown = false; });
+                LeanTween.delayedCall(0.25f, () => { swingOnCooldown = false; });
             });
+        }
+        if (Input.GetKeyUp(KeyCode.Q) && sprite_render.sprite == dfd)
+        {
+            GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.3686859f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, -0.02603696f);
         }
     }
 
@@ -87,6 +93,7 @@ public class PlayerShieldSword : MonoBehaviour
             {
                 pts += 5;
                 bandit.GetComponent<AudioSource>().Play();
+                
             }
             if (collision.gameObject.CompareTag("Projectile"))
             {

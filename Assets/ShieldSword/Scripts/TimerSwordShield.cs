@@ -21,7 +21,7 @@ public class TimerSwordShield : MonoBehaviour
     {
         time -= Time.deltaTime;
         m_time.text = "Time: " + time.ToString("F2");
-        if (time <= 0f && player_man.GetComponent<PlayerShieldSword>().pts < 150)
+        if (time <= 0f && player_man.GetComponent<PlayerShieldSword>().pts < 100)
         {
             SceneManager.LoadScene("LoseScreenSwordShield");
         }
