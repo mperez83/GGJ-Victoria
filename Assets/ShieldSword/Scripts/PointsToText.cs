@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PtsToText : MonoBehaviour
+public class PointsToText : MonoBehaviour
 {
 
     Text txt;
