@@ -25,7 +25,6 @@ public class SceneTimer : MonoBehaviour
     {
         if(t > maxTime)
         {
-            Debug.Log("Time!");
             SceneManager.LoadScene("MainMenu");
         }
     }
