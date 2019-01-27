@@ -15,6 +15,7 @@ TagManager:
   - shroom
   - cauldron
   - spider
+  - VenusFlyTrap
   layers:
   - Default
   - TransparentFX
