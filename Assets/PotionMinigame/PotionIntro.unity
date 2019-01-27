@@ -561,11 +561,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b20518d45890e4be59ba82946f88026c, type: 3}
       propertyPath: nameColor.r
-      value: 0.7052731
+      value: 0.24322885
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b20518d45890e4be59ba82946f88026c, type: 3}
       propertyPath: nameColor.b
-      value: 0.6367924
+      value: 0.18160376
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: b20518d45890e4be59ba82946f88026c, type: 3}
       propertyPath: portraits.Array.data[0]
@@ -581,6 +581,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: ceccdd2973d7d78439bc160fdac94424,
         type: 3}
+    - target: {fileID: 11400000, guid: b20518d45890e4be59ba82946f88026c, type: 3}
+      propertyPath: nameColor.g
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b20518d45890e4be59ba82946f88026c, type: 3}
 --- !u!114 &943268929 stripped
@@ -726,7 +730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: blockViewHeight
-      value: 338
+      value: 232
       objectReference: {fileID: 0}
     - target: {fileID: 11430050, guid: 5e7fbc8d4eb714b279eeeef2262c1e1a, type: 3}
       propertyPath: selectedBlocks.Array.data[0]
@@ -1112,7 +1116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 7
   indentLevel: 0
-  storyText: "I\u2019ve indicated by the number how much of each I need."
+  storyText: They're the ingredients you need to help with my brewing!
   description: 
   character: {fileID: 943268929}
   portrait: {fileID: 0}
@@ -1143,7 +1147,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 943268929}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: b16ae9837e72e8d418c9179b293c978a, type: 3}
+  portrait: {fileID: 21300000, guid: ceccdd2973d7d78439bc160fdac94424, type: 3}
   offset: 0
   fromPosition: {fileID: 46832386}
   toPosition: {fileID: 1798461657}
@@ -1432,7 +1436,7 @@ MonoBehaviour:
   stage: {fileID: 0}
   character: {fileID: 943268929}
   replacedCharacter: {fileID: 0}
-  portrait: {fileID: 21300000, guid: b16ae9837e72e8d418c9179b293c978a, type: 3}
+  portrait: {fileID: 21300000, guid: ceccdd2973d7d78439bc160fdac94424, type: 3}
   offset: 0
   fromPosition: {fileID: 0}
   toPosition: {fileID: 1798461657}
