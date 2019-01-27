@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public TMP_Text m_score;
     public AudioClip m_badSound;
     public AudioClip m_goodSound;
+    public Renderer rend;
     private float time;
     private int numScore;
 
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         Time.timeScale = 0;
         rb = GetComponent<Rigidbody2D>();
         numScore = 0;
+        
     }
 
     // Update is called once per frame
@@ -68,10 +70,22 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
+                StartCoroutine(Flicker());
                 AudioSource.PlayClipAtPoint(m_badSound, transform.position, 1);
                 numScore -= 5;
                 m_score.text = "Score: " + numScore.ToString();
             }
         }
     }
+
+    IEnumerator Flicker()
+    {
+        rend.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        rend.enabled = true;
+        yield return new WaitForSeconds(0.1f);
+        rend.enabled = false;
+        yield return new WaitForSeconds(0.1f);
+        rend.enabled = true;
+    }   
 }
