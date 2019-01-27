@@ -18,7 +18,6 @@ public class ControllerShieldSword : MonoBehaviour
     void Start()
     {
         toggle = Random.Range(0, 2);
-        Debug.Log(toggle);
     }
     
     // Update is called once per frame
@@ -26,11 +25,11 @@ public class ControllerShieldSword : MonoBehaviour
     {
         bandit_count = GameObject.FindGameObjectsWithTag("Enemy").Length;
         arr_count = GameObject.FindGameObjectsWithTag("Projectile").Length;
-        if (toggle == 0 && bandit_count == 1)
+        if (toggle == 0 && bandit_count == 1 && arr_count < 2)
         {
             SpawnBandit();
         }
-        else if (toggle == 1 && arr_count == 1)
+        else if (toggle == 1 && arr_count == 1 && bandit_count < 2)
         {
             SpawnArrow();
         }
@@ -68,7 +67,6 @@ public class ControllerShieldSword : MonoBehaviour
         new_bandit.transform.position = new Vector2(pos.x, pos.y);
         new_bandit.GetComponent<BanditShieldSword>().dir = dir;
         toggle = Random.Range(0, 2);
-        Debug.Log(toggle);
     }
 
     void SpawnArrow()
@@ -79,6 +77,5 @@ public class ControllerShieldSword : MonoBehaviour
         transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         new_arr.GetComponent<Arrow>().dir = dir;
         toggle = Random.Range(0, 2);
-        Debug.Log(toggle);
     }
 }

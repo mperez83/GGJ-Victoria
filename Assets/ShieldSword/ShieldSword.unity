@@ -252,6 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dfd: {fileID: 21300000, guid: 86ea6727111540e4eacf96f2f9ee7d24, type: 3}
   atk: {fileID: 21300000, guid: c1511f17b5160c74e9acb3b5d59c5503, type: 3}
+  pts: 0
 --- !u!61 &1041338181
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -515,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 152632755820354361, guid: 247b48c2d0c194c4c91eda32a8f61531,
         type: 3}
       propertyPath: speed
-      value: 3.5
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 247b48c2d0c194c4c91eda32a8f61531, type: 3}
@@ -585,6 +586,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11647637916211152, guid: b05a29419dcdcf04b99eb271c53f8ba5,
+        type: 3}
+      propertyPath: speed
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b05a29419dcdcf04b99eb271c53f8ba5, type: 3}
