@@ -8,11 +8,13 @@ public class PlayerShieldSword : MonoBehaviour
     public Sprite atk;
     private SpriteRenderer sprite_render;
     public int pts;
+    AudioSource swipe;
     
     // Start is called before the first frame update
     void Start()
     {
         sprite_render = this.GetComponent<SpriteRenderer>();
+        swipe = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -22,6 +24,7 @@ public class PlayerShieldSword : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             sprite_render.sprite = atk;
+            swipe.Play();
             this.GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
             this.GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
         }

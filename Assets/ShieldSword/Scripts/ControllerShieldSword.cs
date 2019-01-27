@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class ControllerShieldSword : MonoBehaviour
 {
@@ -13,13 +15,12 @@ public class ControllerShieldSword : MonoBehaviour
     Vector2 dir;
     int toggle;
 
-
     // Start is called before the first frame update
     void Start()
     {
         toggle = Random.Range(0, 2);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
