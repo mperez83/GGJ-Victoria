@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/PotionMinigame/Lose.unity
     guid: 88bdd7609d005f344bc214a9ed40a239
+  - enabled: 1
+    path: Assets/ShieldSword/ShieldSword.unity
+    guid: a62cbc96b9086c846809436705a50623
+  - enabled: 1
+    path: Assets/ShieldSword/LoseScreenSwordShield.unity
+    guid: bc5493ae9d02b7a4190e7e08d0307ef6
   m_configObjects: {}

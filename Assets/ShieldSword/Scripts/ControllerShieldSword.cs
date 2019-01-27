@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class ControllerShieldSword : MonoBehaviour
 {
@@ -19,6 +18,7 @@ public class ControllerShieldSword : MonoBehaviour
     void Start()
     {
         toggle = Random.Range(0, 2);
+
     }
 
     // Update is called once per frame

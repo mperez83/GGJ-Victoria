@@ -6,6 +6,7 @@ public class PlayerShieldSword : MonoBehaviour
 {
     public AudioSource swipe;
     public AudioSource hurt;
+    public AudioSource foiled;
     public Sprite dfd;
     public Sprite atk;
     private SpriteRenderer sprite_render;
@@ -72,6 +73,10 @@ public class PlayerShieldSword : MonoBehaviour
             {
                 pts -= 5;
                 hurt.Play();
+            }
+            else
+            {
+                foiled.Play();
             }
         }
         if (sprite_render.sprite == atk)
