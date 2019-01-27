@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class PlayerShieldSword : MonoBehaviour
 {
-    /// <summary>
-    /// ADD POINTS
-    /// </summary>
-
     public Sprite dfd;
     public Sprite atk;
     private SpriteRenderer sprite_render;
+    public int pts;
+    AudioSource swipe;
     
     // Start is called before the first frame update
     void Start()
     {
-        //attack = false;
-        //defend = true;
         sprite_render = this.GetComponent<SpriteRenderer>();
+        swipe = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +24,7 @@ public class PlayerShieldSword : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             sprite_render.sprite = atk;
+            swipe.Play();
             this.GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
             this.GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
         }
@@ -34,11 +32,9 @@ public class PlayerShieldSword : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Q))
         {
             sprite_render.sprite = dfd;
-            this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.4340281f);
-            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, -0.01063752f);
+            this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.2095523f);
+            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, 0.05352981f);
         }
-        //Sword();
-        //Hurt();
     }
 
     void Point()
@@ -61,47 +57,25 @@ public class PlayerShieldSword : MonoBehaviour
         }
     }
 
-    //void Sword()
-    //{
-    //    if (Input.GetKeyDown(KeyCode.Q))
-    //    {
-    //        sprite_render.sprite = atk;
-    //        this.GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
-    //        this.GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
-    //    }
-
-    //    if (Input.GetKeyUp(KeyCode.Q))
-    //    {
-    //        sprite_render.sprite = dfd;
-    //        this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.4340281f);
-    //        this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, -0.01063752f);
-    //    }
-    //}
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (sprite_render.sprite == dfd)
         {
-            Debug.Log(">:)");
+            if (collision.gameObject.CompareTag("Enemy"))
+            {
+                pts -= 5;
+            }
         }
         if (sprite_render.sprite == atk)
         {
             if (collision.gameObject.CompareTag("Enemy"))
             {
-                Debug.Log("Ha, YES!");
+                pts += 5;
             }
             if (collision.gameObject.CompareTag("Projectile"))
             {
-                Debug.Log("what the fuck?");
+                pts -= 10;
             }
         }
     }
-
-    //void Hurt()
-    //{
-    //    if (defend == false)
-    //    {
-    //        Debug.Log("oof");
-    //    }
-    //}
 }
