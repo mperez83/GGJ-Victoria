@@ -13,11 +13,13 @@ public class PlayerShieldSword : MonoBehaviour
     public int pts;
     AudioSource sources;
     public GameObject bandit;
+
+    bool swingOnCooldown;
     
     // Start is called before the first frame update
     void Start()
     {
-        sprite_render = this.GetComponent<SpriteRenderer>();
+        sprite_render = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -29,19 +31,19 @@ public class PlayerShieldSword : MonoBehaviour
 
     void Sword()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q) && !swingOnCooldown)
         {
+            swingOnCooldown = true;
             sprite_render.sprite = atk;
             swipe.Play();
-            this.GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
-            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
-        }
+            GetComponent<BoxCollider2D>().size = new Vector2(0.3790514f, 0.3276514f);
+            GetComponent<BoxCollider2D>().offset = new Vector2(0.08952573f, 0.1489272f);
 
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            sprite_render.sprite = dfd;
-            this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.2095523f);
-            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, 0.05352981f);
+            LeanTween.delayedCall(0.5f, () =>
+            {
+                sprite_render.sprite = dfd;
+                LeanTween.delayedCall(0.5f, () => { swingOnCooldown = false; });
+            });
         }
     }
 
