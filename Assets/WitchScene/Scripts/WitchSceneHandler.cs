@@ -34,4 +34,9 @@ public class WitchSceneHandler : MonoBehaviour
         yield return new WaitForSeconds(3.5f);
         flowchart.ExecuteBlock("Witch Start Speak");
     }
+
+    public void ExitStageRight()
+    {
+
+    }
 }
