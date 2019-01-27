@@ -11,29 +11,28 @@ public class ControllerShieldSword : MonoBehaviour
     int x;
     Vector2 pos;
     Vector2 dir;
+    int toggle;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        toggle = Random.Range(0, 2);
+        Debug.Log(toggle);
     }
-
+    
     // Update is called once per frame
     void Update()
     {
         bandit_count = GameObject.FindGameObjectsWithTag("Enemy").Length;
         arr_count = GameObject.FindGameObjectsWithTag("Projectile").Length;
-        if (bandit_count + arr_count <= 5)
+        if (toggle == 0 && bandit_count == 1)
         {
-            if (bandit_count < arr_count)
-            {
-                SpawnBandit();
-            }
-            else
-            {
-                SpawnArrow();
-            }
-            
+            SpawnBandit();
+        }
+        else if (toggle == 1 && arr_count == 1)
+        {
+            SpawnArrow();
         }
     }
 
@@ -60,7 +59,6 @@ public class ControllerShieldSword : MonoBehaviour
             pos = Vector2.left * 6.5f;
             dir = Vector2.right;
         }
-        Debug.Log(x);
     }
 
     void SpawnBandit()
@@ -69,7 +67,8 @@ public class ControllerShieldSword : MonoBehaviour
         GameObject new_bandit = GameObject.Instantiate(bandit);
         new_bandit.transform.position = new Vector2(pos.x, pos.y);
         new_bandit.GetComponent<BanditShieldSword>().dir = dir;
-        //GameObject.Instantiate(new_bandit);
+        toggle = Random.Range(0, 2);
+        Debug.Log(toggle);
     }
 
     void SpawnArrow()
@@ -77,7 +76,9 @@ public class ControllerShieldSword : MonoBehaviour
         setPosAndDir();
         GameObject new_arr = GameObject.Instantiate(arrow);
         new_arr.transform.position = new Vector2(pos.x, pos.y);
+        transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
         new_arr.GetComponent<Arrow>().dir = dir;
-        //new_arr.transform.rotation = Quaternion.LookRotation(Vector3.forward, dir);
+        toggle = Random.Range(0, 2);
+        Debug.Log(toggle);
     }
 }

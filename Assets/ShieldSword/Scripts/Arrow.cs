@@ -24,7 +24,6 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Debug.Log("aaahhh!!! DIE!!!!!!!!!!!!!!!!!!!");
             Destroy(this.gameObject);
         }
     }

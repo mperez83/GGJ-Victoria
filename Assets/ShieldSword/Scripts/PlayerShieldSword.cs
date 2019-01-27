@@ -34,8 +34,8 @@ public class PlayerShieldSword : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Q))
         {
             sprite_render.sprite = dfd;
-            this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.4340281f);
-            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, -0.01063752f);
+            this.GetComponent<BoxCollider2D>().size = new Vector2(0.4999112f, 0.2095523f);
+            this.GetComponent<BoxCollider2D>().offset = new Vector2(0.002238154f, 0.05352981f);
         }
         //Sword();
         //Hurt();
