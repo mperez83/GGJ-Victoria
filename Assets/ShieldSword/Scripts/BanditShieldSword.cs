@@ -7,10 +7,11 @@ public class BanditShieldSword : MonoBehaviour
     public Vector2 dir;
     public float speed;
 
+
     // Start is called before the first frame update
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame

@@ -4,23 +4,30 @@ using UnityEngine;
 
 public class PlayerShieldSword : MonoBehaviour
 {
+    public AudioSource swipe;
+    public AudioSource hurt;
     public Sprite dfd;
     public Sprite atk;
     private SpriteRenderer sprite_render;
     public int pts;
-    AudioSource swipe;
+    AudioSource sources;
+    public GameObject bandit;
     
     // Start is called before the first frame update
     void Start()
     {
         sprite_render = this.GetComponent<SpriteRenderer>();
-        swipe = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
         Point();
+        Sword();
+    }
+
+    void Sword()
+    {
         if (Input.GetKeyDown(KeyCode.Q))
         {
             sprite_render.sprite = atk;
@@ -64,6 +71,7 @@ public class PlayerShieldSword : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 pts -= 5;
+                hurt.Play();
             }
         }
         if (sprite_render.sprite == atk)
@@ -71,10 +79,12 @@ public class PlayerShieldSword : MonoBehaviour
             if (collision.gameObject.CompareTag("Enemy"))
             {
                 pts += 5;
+                bandit.GetComponent<AudioSource>().Play();
             }
             if (collision.gameObject.CompareTag("Projectile"))
             {
                 pts -= 10;
+                hurt.Play();
             }
         }
     }
