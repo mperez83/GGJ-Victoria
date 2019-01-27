@@ -9,7 +9,6 @@ public class StartButton : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Start");
         Time.timeScale = 1;
         Destroy(GameObject.Find("Canvas2"));
     }
