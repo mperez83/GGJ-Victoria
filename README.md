@@ -1,5 +1,5 @@
-# GGJ-2018-Victoria
-Unity game submission for the 2018 Global Game Jam! The theme was "what home means to you", and in this game, you play as a woman who escapes imprisonment and journeys back to her home village.
+# GGJ-Victoria
+Unity game submission for Global Game Jam 2018! In this game, you play as a woman who escapes imprisonment and journeys back to her home village.
 
 Unfortunately, we could not get the build working by the end. Everything works in the editor, but building the game causes it to crash.
 
